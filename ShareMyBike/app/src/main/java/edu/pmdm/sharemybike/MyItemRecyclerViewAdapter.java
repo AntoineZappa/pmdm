@@ -1,6 +1,9 @@
 package edu.pmdm.sharemybike;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -41,7 +44,23 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         holder.mLocation.setText(mValues.get(position).getLocation());
         holder.mOwner.setText(mValues.get(position).getOwner());
         holder.mDrescription.setText(mValues.get(position).getDescription());
+        holder.mBtnImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { //Código para enviar el email
+//                String to = "hola";
+//                String subjectText = "Couch App: I'd like to book your bike";
+//
+//                Intent i= new Intent();
+//                i.createChooser(i,"Choose the app to send the email with your order");
+//                i.setAction(Intent.ACTION_SEND);
+//                i.setData(Uri.parse("mailto:"));
+//                i.putExtra(Intent.EXTRA_EMAIL,to);
+//                i.putExtra(Intent.EXTRA_SUBJECT, subjectText);
+//                i.putExtra(Intent.EXTRA_TEXT, emailText);
+//                startActivity(Intent.createChooser(i, "Choose an Email client :"));
 
+            }
+        });
     }
 
     @Override
