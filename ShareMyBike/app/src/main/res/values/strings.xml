@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ShareMyBike</string>
+    <string name="app_login_button">LOGIN</string>
+    <string name="content_login_button">login name</string>
+    <string name="app_subtitle_text">The bike experience exchange app</string>
+    <string name="content_subtitle_text">bike subtitle text</string>
+    <string name="app_email_text">share@mybike.com</string>
+    <string name="content_email_text">corporative email text</string>
+    <string name="app_location_text">Rambla del Poblenou, 156</string>
+    <string name="content_location_text">location name</string>
+    <string name="content_main_image">main image name</string>
+    <string name="content_map_vector">vector map</string>
+    <string name="content_email_vector">vector email</string>
+</resources>
