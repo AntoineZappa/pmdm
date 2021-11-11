@@ -11,4 +11,16 @@
     <string name="content_main_image">main image name</string>
     <string name="content_map_vector">vector map</string>
     <string name="content_email_vector">vector email</string>
+    <string name="title_activity_bike">BikeActivity</string>
+    <string name="fragment_top_text">Select the date to list the available bikes</string>
+    <string name="fragment_top_text_dates">Date: %1$s/%2$s/%3$s</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>
