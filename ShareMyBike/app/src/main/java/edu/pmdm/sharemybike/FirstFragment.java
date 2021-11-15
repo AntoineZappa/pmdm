@@ -40,7 +40,8 @@ private FragmentFirstBinding binding;
         binding.calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                binding.textviewFirst.setText(getString(R.string.fragment_top_text_dates, String.valueOf(dayOfMonth), String.valueOf(month), String.valueOf(year)));
+                binding.textviewFirst.setText(getString(R.string.fragment_top_text_dates,
+                        String.valueOf(dayOfMonth), String.valueOf(month+1), String.valueOf(year)));
             }
         });
     }
