@@ -72,7 +72,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
                 emailIntent.putExtra(Intent.EXTRA_TEXT, emailText);
                 emailIntent.setSelector( selectorIntent );
 
-                v.getContext().startActivity(Intent.createChooser(emailIntent, "Send email..."));
+                v.getContext().startActivity(Intent.createChooser(emailIntent, "Choose the app to send the email with your order"));
             }
         });
     }
