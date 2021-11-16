@@ -44,24 +44,40 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         holder.mLocation.setText(mValues.get(position).getLocation());
         holder.mOwner.setText(mValues.get(position).getOwner());
         holder.mDrescription.setText(mValues.get(position).getDescription());
-        holder.mBtnImg.setOnClickListener(new View.OnClickListener() {
+        holder.mBtnMail.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) { //Código para enviar el email
-//                String to = "hola";
-//                String subjectText = "Couch App: I'd like to book your bike";
-//
-//                Intent i= new Intent();
+                String[] to = new String[]{"francescol@gmail.com"};
+                String subjectText = "Couch App: I'd like to book your bike";
+                String emailText = "Dear Mr/Mrs <propietario>:\n" +
+                                "I'd like to use your bike at <ubicación> (<ciudad>) for the following date: <fecha>\n" +
+                                "Can you confirm its availability? Kindest regards";
+
+//                Intent i= new Intent(Intent.ACTION_SEND);
 //                i.createChooser(i,"Choose the app to send the email with your order");
-//                i.setAction(Intent.ACTION_SEND);
+//                //i.setAction(Intent.ACTION_SEND);
 //                i.setData(Uri.parse("mailto:"));
 //                i.putExtra(Intent.EXTRA_EMAIL,to);
 //                i.putExtra(Intent.EXTRA_SUBJECT, subjectText);
 //                i.putExtra(Intent.EXTRA_TEXT, emailText);
-//                startActivity(Intent.createChooser(i, "Choose an Email client :"));
+//                i.setType("message/rfc822");
+//                v.getContext().startActivity(i);
+                Intent selectorIntent = new Intent(Intent.ACTION_SENDTO);
+                selectorIntent.setData(Uri.parse("mailto:"));
 
+                final Intent emailIntent = new Intent(Intent.ACTION_SEND);
+                emailIntent.putExtra(Intent.EXTRA_EMAIL,to);
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, subjectText);
+                emailIntent.putExtra(Intent.EXTRA_TEXT, emailText);
+                emailIntent.setSelector( selectorIntent );
+
+                v.getContext().startActivity(Intent.createChooser(emailIntent, "Send email..."));
             }
         });
     }
+
+
 
     @Override
     public int getItemCount() {
@@ -74,7 +90,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         public final TextView mLocation;
         public final TextView mOwner;
         public final TextView mDrescription;
-        public final ImageButton mBtnImg;
+        public final ImageButton mBtnMail;
 
         public BikesContent.Bike mItem;
 
@@ -85,8 +101,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
             mLocation = binding.txtLocation;
             mOwner = binding.txtOwner;
             mDrescription = binding.txtDescription;
-            mBtnImg = binding.btnMail;
-
+            mBtnMail = binding.btnMail;
         }
 
     }
